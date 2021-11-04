@@ -211,6 +211,7 @@ export const NATIVE: SentryNativeWrapper = {
       integrations,
       defaultIntegrations,
       transport,
+      tracesSampler, // to avoid ios crash
       ...filteredOptions
     } = options;
     /* eslint-enable @typescript-eslint/unbound-method,@typescript-eslint/no-unused-vars */
