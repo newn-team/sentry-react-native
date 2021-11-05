@@ -117,7 +117,8 @@ export const NATIVE = {
             }
             // filter out all the options that would crash native.
             /* eslint-disable @typescript-eslint/unbound-method,@typescript-eslint/no-unused-vars */
-            const { beforeSend, beforeBreadcrumb, integrations, defaultIntegrations, transport } = options, filteredOptions = __rest(options, ["beforeSend", "beforeBreadcrumb", "integrations", "defaultIntegrations", "transport"]);
+            const { beforeSend, beforeBreadcrumb, integrations, defaultIntegrations, transport, tracesSampler } = options, // to avoid ios crash
+            filteredOptions = __rest(options, ["beforeSend", "beforeBreadcrumb", "integrations", "defaultIntegrations", "transport", "tracesSampler"]);
             /* eslint-enable @typescript-eslint/unbound-method,@typescript-eslint/no-unused-vars */
             const nativeIsReady = yield RNSentry.initNativeSdk(filteredOptions);
             this.nativeIsReady = nativeIsReady;
